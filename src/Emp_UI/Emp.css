@@ -1,0 +1,133 @@
+.main_body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;
+  background-color: #ffffff; /* Adjust to match your Navbar background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow when scrolling */
+  width: 100%;
+  max-width: 100vw;
+}
+
+.main_body > .header {
+  padding: 0;
+}
+
+section {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #35495e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2c3e50;
+}
+
+/* Container that holds both components side by side */
+.complaint-image-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+
+  /* Make it wider and centered */
+  width: 95vw;
+  max-width: 2000px;
+  margin: 2rem auto;
+
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  flex-wrap: wrap; /* support responsiveness */
+}
+
+
+.image-picker-wrapper img {
+  max-width: 100%; /* ensures it doesn’t overflow */
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  display: block;
+}
+
+
+
+/* Complaint box - 75% width on large screens */
+.complaint-box-wrapper {
+  flex: 3;
+  min-width: 250px;
+}
+
+/* Site image - 25% width */
+.image-picker-wrapper {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* On smaller screens: stack vertically */
+@media screen and (max-width: 768px) {
+  .complaint-image-section {
+    flex-direction: column;
+  }
+
+  .complaint-box-wrapper,
+  .image-picker-wrapper {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  section {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .complaint-image-section {
+    flex-direction: column;
+  }
+
+  .complaint-box, .image-picker-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .image-picker-wrapper {
+    text-align: center;
+  }
+}
